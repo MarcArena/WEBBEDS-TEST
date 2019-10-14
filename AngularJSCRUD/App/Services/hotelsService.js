@@ -7,8 +7,6 @@
 
         var dataFactory = {};
 
-        var foo = "bb";
-
         dataFactory.getHotels = function (destinationId, numberOfNights) {
             return $http.get(urlBase + '?destinationId=' + destinationId + '&numberOfNights=' + numberOfNights);
         };
