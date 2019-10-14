@@ -5,10 +5,10 @@
         $scope.numberOfNights = 2;
         $scope.destinationId = 1419;
         $scope.tries = [];
+
+        $scope.counter = 1;
+
         function doQuery() {
-
-            $scope.counter = 1;
-
             $scope.loading = true;
             var start = performance.now();
 
@@ -25,6 +25,9 @@
                         $scope.counter++;
 
                         if ($scope.counter <= 10) { doQuery(); }
+
+                        $scope.loading = false;
+
                     }
                     else {
                         $scope.Hotels = result.Hotels;
@@ -45,6 +48,8 @@
 
                         doQuery();
                     }
+
+                    $scope.loading = false;
                 });
         }
 
